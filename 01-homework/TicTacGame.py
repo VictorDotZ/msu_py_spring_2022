@@ -64,7 +64,7 @@ class TicTacGame:
             self.redraw_board()
 
             print(f"Player's {self.states[self.current_player()]} turn")
-            print("enter field: ", end="")
+            print("enter field as row and column separated by space: ", end="")
 
             while True:
                 field = input()
