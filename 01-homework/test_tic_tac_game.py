@@ -58,39 +58,39 @@ class TestTicTacGame(unittest.TestCase):
         ]
         self.assertFalse(self.game.is_someone_won())
         self.game.state = [
-             1, -1,  1,
+            1, -1,  1,
             -1,  1, -1,
             -1,  1, -1,
           ]
         self.assertFalse(self.game.is_someone_won())
 
         self.game.state = [
-             1,  1,  1,
+            1,  1,  1,
             -1,  0, -1,
             -1,  0,  0,
         ]
         self.assertTrue(self.game.is_someone_won())
         self.game.state = [
             -1,  0, -1,
-             1,  1,  1,
+            1,  1,  1,
             -1,  0,  0,
         ]
         self.assertTrue(self.game.is_someone_won())
         self.game.state = [
-             1,  0,  1,
-             1,  0,  0,
+            1,  0,  1,
+            1,  0,  0,
             -1, -1, -1,
         ]
         self.assertTrue(self.game.is_someone_won())
         self.game.state = [
-             1,  0,  1,
+            1,  0,  1,
             -1,  1,  0,
             -1, -1,  1,
         ]
         self.assertTrue(self.game.is_someone_won())
         self.game.state = [
-             1,  0, -1,
-             1, -1,  1,
+            1,  0, -1,
+            1, -1,  1,
             -1,  1, -1,
         ]
         self.assertTrue(self.game.is_someone_won())
@@ -107,8 +107,8 @@ class TestTicTacGame(unittest.TestCase):
         ]
         self.assertTrue(self.game.is_someone_won())
         self.game.state = [
-             1,  0, -1,
-             1,  1, -1,
+            1,  0, -1,
+            1,  1, -1,
             -1,  1, -1,
         ]
         self.assertTrue(self.game.is_someone_won())
@@ -127,9 +127,9 @@ class TestTicTacGame(unittest.TestCase):
         ]
         self.assertTrue(self.game.is_game_continue())
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertTrue(self.game.is_game_continue())
         self.game.state = [
@@ -140,39 +140,39 @@ class TestTicTacGame(unittest.TestCase):
         self.assertTrue(self.game.is_game_continue())
 
         self.game.state = [
-             1, -1,  1,
+            1, -1,  1,
             -1,  1, -1,
             -1,  1, -1,
         ]
         self.assertFalse(self.game.is_game_continue())
         self.game.state = [
-             1,  0, -1,
-             1,  1, -1,
+            1,  0, -1,
+            1,  1, -1,
             -1,  1, -1,
         ]
         self.assertFalse(self.game.is_game_continue())
         self.game.state = [
-             1,  0,  1,
-             1,  0,  0,
+            1,  0,  1,
+            1,  0,  0,
             -1, -1, -1,
         ]
         self.assertFalse(self.game.is_game_continue())
         self.game.state = [
             -1,  0, -1,
-             1,  1,  1,
+            1,  1,  1,
             -1,  0,  0,
         ]
         self.assertFalse(self.game.is_game_continue())
         self.game.state = [
-             1, -1,  1,
-             1, -1,  1,
+            1, -1,  1,
+            1, -1,  1,
             -1,  1, -1,
         ]
         self.assertFalse(self.game.is_game_continue())
         self.game.state = [
-             1, -1,  1,
+            1, -1,  1,
             -1,  1, -1,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertFalse(self.game.is_game_continue())
 
@@ -197,22 +197,22 @@ class TestTicTacGame(unittest.TestCase):
         self.assertTrue(self.game.is_turn_possible(8))
 
         self.game.state = [
-             1, -1,  1,
-             1, -1,  1,
+            1, -1,  1,
+            1, -1,  1,
             -1,  1, -1,
         ]
         self.assertFalse(self.game.is_turn_possible(1))
         self.game.state = [
-             1, -1,  1,
+            1, -1,  1,
             -1,  1, -1,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertFalse(self.game.is_turn_possible(7))
 
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertTrue(self.game.is_turn_possible(2))
         self.game.state = [
@@ -222,9 +222,9 @@ class TestTicTacGame(unittest.TestCase):
         ]
         self.assertTrue(self.game.is_turn_possible(7))
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertTrue(self.game.is_turn_possible(5))
         self.game.state = [
@@ -235,9 +235,9 @@ class TestTicTacGame(unittest.TestCase):
         self.assertTrue(self.game.is_turn_possible(6))
 
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertFalse(self.game.is_turn_possible(1))
         self.game.state = [
@@ -247,9 +247,9 @@ class TestTicTacGame(unittest.TestCase):
         ]
         self.assertFalse(self.game.is_turn_possible(3))
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertFalse(self.game.is_turn_possible(6))
         self.game.state = [
@@ -267,9 +267,9 @@ class TestTicTacGame(unittest.TestCase):
         ]
         self.assertEqual(self.game.current_player(),  1)
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertEqual(self.game.current_player(), -1)
         self.game.state = [
@@ -279,15 +279,15 @@ class TestTicTacGame(unittest.TestCase):
         ]
         self.assertEqual(self.game.current_player(), -1)
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.assertEqual(self.game.current_player(), -1)
         self.game.state = [
-             1, -1,  1,
+            1, -1,  1,
             -1,  0,  1,
-             0,  0, -1,
+            0,  0, -1,
         ]
         self.assertEqual(self.game.current_player(), 1)
 
@@ -300,9 +300,9 @@ class TestTicTacGame(unittest.TestCase):
         self.game.make_turn(4)
         self.assertEqual(self.game.state[4], 1)
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.game.make_turn(2)
         self.assertEqual(self.game.state[2], -1)
@@ -314,16 +314,16 @@ class TestTicTacGame(unittest.TestCase):
         self.game.make_turn(0)
         self.assertEqual(self.game.state[0], -1)
         self.game.state = [
-             1, -1,  0,
+            1, -1,  0,
             -1,  1,  0,
-             1,  1, -1,
+            1,  1, -1,
         ]
         self.game.make_turn(5)
         self.assertEqual(self.game.state[5], -1)
         self.game.state = [
-             1, -1,  1,
+            1, -1,  1,
             -1,  0,  1,
-             0,  0, -1,
+            0,  0, -1,
         ]
         self.game.make_turn(7)
         self.assertEqual(self.game.state[7], 1)

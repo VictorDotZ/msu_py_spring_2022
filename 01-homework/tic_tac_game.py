@@ -24,7 +24,7 @@ class TicTacGame:
                     f"{i+1} "
                     + "".join(
                         list(map(lambda x: self.states[x], self.state))[
-                            i * 3 : i * 3 + 3
+                            i * 3 : i * 3 + 3  # noqa: E203
                         ]
                     )
                     for i in range(3)
@@ -37,7 +37,10 @@ class TicTacGame:
             max(
                 [
                     abs(sum(x))
-                    for x in [self.state[i * 3 : i * 3 + 3] for i in range(3)]
+                    for x in [
+                        self.state[i * 3 : i * 3 + 3]  # noqa: E203
+                        for i in range(3)
+                    ]
                     + [self.state[i::3] for i in range(3)]
                     + [self.state[0::4], self.state[2:8:2]]
                 ]
@@ -69,9 +72,16 @@ class TicTacGame:
             while True:
                 field = input()
                 if not is_valid_input(field):
-                    print("incorrect input format. Please, enter field again: ", end="")
-                elif not self.is_turn_possible(to_arraylike_coordinates(field)):
-                    print("field not free. Please, enter field again: ", end="")
+                    print(
+                        "incorrect input format. Please, enter field again: ",
+                        end="",
+                    )
+                elif not self.is_turn_possible(
+                    to_arraylike_coordinates(field)
+                ):
+                    print(
+                        "field not free. Please, enter field again: ", end=""
+                    )
                 else:
                     break
 
