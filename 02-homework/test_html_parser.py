@@ -4,10 +4,7 @@ import unittest
 
 from itertools import chain
 
-# from ast import literal_eval
-
 from faker import Faker
-
 
 from html_parser import HTMLParser
 
