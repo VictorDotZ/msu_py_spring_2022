@@ -10,12 +10,7 @@ class LRUCache(dict):
                 low_priority_key = min(self.cache, key=self.cache.get)
                 self.pop(low_priority_key)
                 self.cache.pop(low_priority_key)
-
-            for k in self.cache:
-                self.cache[k] += 1
-            self.cache[key] = 1
-        else:
-            self.cache[key] += 1
+        self.__maximize_priority(key)
 
         super().__setitem__(key, value)
 
@@ -23,5 +18,12 @@ class LRUCache(dict):
         if key not in self.cache:
             return None
 
-        self.cache[key] += 1
+        self.__maximize_priority(key)
         return super().__getitem__(key)
+
+    def __maximize_priority(self, key):
+        self.cache[key] = (
+            self.cache[max(self.cache, key=self.cache.get)] + 1
+            if self.cache
+            else 0
+        )
