@@ -11,7 +11,7 @@ if __name__ == "__main__":
     )
     lru = logging.getLogger("lru_cache")
 
-    if len(sys.argv) > 1 and "-s" in sys.argv[1]:
+    if len(sys.argv) > 1 and "-s" in sys.argv:
         handler = logging.StreamHandler(sys.stdout)
         formatter = logging.Formatter(
             "[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s -"
